@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="myApp"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+  <div class="container">
+      <div ng-controller="EventController">
+        <img ng-src="{{event.imageUrl}}">
+        <h1>{{event.name}}</h1>
+     
+      <hr />
+
+      <h3>Questions</h3>
+      <ul class="listQuestions">
+          <li ng-repeat="session in event.sessions">
+            <div class="row question">
+              <div class="well span9">
+                <h4 class="well-title">{{session.def}}</h4>
+              </div>
+            </div>
+          </li>
+        </ul>
+       </div>
+  </div>
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/EventController.js"></script>
+
+</body>
+</html>
